@@ -17,7 +17,7 @@
 <body>
     <div id="wrap">
         <nav>
-                <img class="logo" src="img/LV_favi.png" alt="" height="100">
+                <img class="logo" src="img/LV_favi.png" alt="" height="80">
             
             <button type="button" class="btnnavbar" data-action="nav-toggle">
                 <span></span>
@@ -40,7 +40,7 @@
                 <li class="nav-item"><a href="service.html">Services</a></li>
                             <li class="nav-item"><a href="gallery.html">Gallery</a></li>
                             <li class="nav-item"><a href="contact.html">Contact</a></li>
-                            <button class="button1" href="tel:+919535439059"> Call Today</button>
+                            <button class="button1"><a href="tel:+919535439059" style="text-decoration: none; background: var(--btncolor); color:white;"> Call Today </a></button>
             </ul>
         </nav>
     </div>
@@ -49,12 +49,12 @@
             <h1 class="heading1">
                 LV Enterprises<br> and Landscaping <br>Services
             </h1>
-            <p class="heading2"> From garden maintainance to cleanups <br> and repairs, we take pride in our work. <br> For a free Quote, <a href="contact.html" style="text-decoration: underline; color: var(--text-color);">Contact us now</a></p>
+            <p class="heading2"> From garden maintainance to cleanups <br> and repairs, we take pride in our work. <br> For a free Quote, <a href="contact.html#site_container" style="text-decoration: underline; color: var(--text-color);">Contact us now</a></p>
             
             <img class="bgpic"src="img/bg1.jpeg" alt="">
-        
+        </div>
     </header>
-</div>
+
     <!-- <div class="site_container">
             <header>
                 <nav>
@@ -87,46 +87,56 @@
                 </div>
                 <div class="contact-right">
                     <h3> Send your Message</h3>
-                    <form action="">
+                    <form action="https://formsubmit.co/deepalctesting@gmail.com" method="POST">
+                                
+                        <!-- HONEY POT-->
+                        <input type="text" name="_honey" style="display: none;">
 
-                        <div class="input-row">
-                            <div class="input-group">
-                                <label for="firstName">First Name</label>
-                                <input style="background: #fff;"type="text" placeholder="First Name" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="firstName">Last Name</label>
-                                <input type="text" placeholder="Last Name" required>
-                            </div>
+                        <!-- DISABLE CAPTCHA-->
+                       <!-- <input type="hidden" name="_captcha" value="false"> -->
+
+                       <!-- THANK YOU PAGE-->
+                       <input type="hidden" name="_next" value="https://rade1227.github.io/LVEnterprises_Demo/success.html">
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="firstName">First Name</label>
+                            <input id="FirstName" name="First&nbsp;Name" style="background: #fff;"type="text" placeholder="First Name" required>
                         </div>
-                        <div class="input-row">
-                            <div  class="input-group">
-                                <label for="firstName">City</label>
-                                <input type="text" placeholder="City" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="firstName">Email</label>
-                                <input type="email" placeholder="Email" required>
-                            </div>
+                        <div class="input-group">
+                            <label for="LastName">Last Name</label>
+                            <input id="LastName" name="Last&nbsp;Name" type="text" placeholder="Last Name" required>
                         </div>
-                        <div class="input-row">
-                            <div class="input-group">
-                                <label for="firstName">Phone</label>
-                                <input type="phone" placeholder="Phone" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="firstName" >Services</label>
-                                <select>
-                                    <!-- <option value="none">Select one</option> -->
-                                    <option value="none">Outdoor</option>
-                                    <option value="none">Indoor</option>
-                                    <option value="none">Maintainance</option>
-                                    <option value="none">Bakery</option>
-                                </select>
-                            </div>
+                    </div>
+                    <div class="input-row">
+                        <div  class="input-group">
+                            <label for="City">City</label>
+                            <input id="City" type="text" name="City" placeholder="City" required>
                         </div>
-                        <button class="formbtn" type="submit"> Submit</button>
-                    </form>
+                        <div class="input-group">
+                            <label for="Email">Email</label>
+                            <input id="Email" type="email" name="Email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="Phone">Phone</label>
+                            <input id="Phone" type="phone" name="Phone"placeholder="Phone" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="Services" >Services</label>
+                            <select id="Services" name="Services">
+                                <!-- <option value="none">Select one</option> -->
+                                <option value="outdoor">Outdoor</option>
+                                <option value="indoor">Indoor</option>
+                                <option value="maintainance">Maintainance</option>
+                                <option value="bakery">Bakery</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="formbtn" name="formbtn" id="formbtn" type="submit"> Submit</button>
+                    
+                </form>
                 </div>
             </div>
 
@@ -143,10 +153,10 @@
 
             </div>
         </div>
-        <div class="gallery">
+        <div class="galleryhome">
             <div class="image-container">
                 <img src="img/gallery1.jpeg" alt="Image 1" class="image" id="im1">
-                <img src="img/gallery2.jpeg" alt="Image 2" class="image" id="im" >
+                <img src="img/gallery5.png" alt="Image 2" class="image" id="im" >
                 <img src="img/gallery3.jpeg" alt="Image 3" class="image" id="im1">
                 <img src="img/gallery4.jpeg" alt="Image 4" class="image" id="im">
             </div>
@@ -179,41 +189,32 @@
               </div>
 
         </div>
-        <div>
-            <img class="bgpic" src="gallery/landscaping_1.jpg" alt="">
-        </div>
-        <!-- <div class="recog">
-            <h1> RECOGNITION</h1></div>
-      <!-- Swiper -->
-            <!--<div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                 <div class="swiper-slide">
-                    <img src="img/appr_certificate.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="img/appr_certificate2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="img/crownPlaza.png" />
-                </div>
-                <!-- <div class="swiper-slide">
-                    <img src="img/appr_certificate.png" />
-                </div> 
-                
-                </div>
-                <!-- <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div> 
-                <div class="autoplay-progress">
-                <svg viewBox="0 0 48 48">
-                    <!-- <circle cx="24" cy="24" r="20"></circle> -->
-                <!--</svg>
-                <span></span>
-                </div>
+     <!--***********************DIAMOND GALLERY START**********************************************************  -->
+        <!-- <div>
+            <div class="galcontainer1">
+                <article class="gallery">
+                    <img src="gallery/g0.jpg" alt="" />
+                    <img src="gallery/g1.jpg" alt="" />
+                    <img src="gallery/g3.jpg" alt="" />
+                    <img src="gallery/g4.jpg" alt="" />
+                    <img src="gallery/g5.jpg" alt="" />
+                    <img src="gallery/g6.jpg" alt="" />
+                    <img src="gallery/g7.jpeg" alt="" />
+                    <img src="gallery/g8.jpg" alt="" />
+                    <img src="gallery/g9.jpg" alt="" />
+                    <img src="gallery/g10.jpg" alt="" />
+                  </article>
             </div>
-               -->
+        </div> -->
+
+        <!-- **********************DIAMOND GALLERY END ******************************************************* -->
+
+            <div class="imgalleryhome">
+                <img class="bgpic" src="gallery/landscaping_1.jpg" alt="">
+            </div>
+       
             
-     </div>       
+         
 
                <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -251,7 +252,7 @@
 
     <div class="footer-left" style="background: var(--text-color);">
 
-      <img src="img/LV_favi.png" alt="" style="background: var(--text-color);">
+      <img src="img/LV_favi.png" class="footimg" alt="" style="background: var(--text-color);">
       <h3>LV Enterprises and <br>Landscaping Services</h3>
 
       <p class="footer-links">
@@ -285,7 +286,7 @@
 
       <div style="background: var(--text-color);">
         <i class="fa fa-envelope"></i>
-        <p> <a href="mailto:lvel.service1@gmail.com" target="_blank"> lvel.service1@gmail.com </a> <br>
+        <p > <a href="mailto:lvel.service1@gmail.com" target="_blank"> lvel.service1@gmail.com </a> <br>
           <a href="mailto:lakshmiv@lvlandscaping.in" target="_blank"> lakshmiv@lvlandscaping.in </a></p>
       </div>
 
@@ -316,7 +317,7 @@
     </div>
     <hr>
     <div class="cpy">
-    <copyright class="cpy"> &copy 2024 LV Enterprises and Landscaping Services. All Right Reserved by <a href="https://influencerlabs.in/" target="_blank">Influencer Labs</a></copyright>
+    <copyright class="cpy"> &copy 2024 All Right Reserved by <a href="https://influencerlabs.in/" target="_blank">Influencer Labs</a></copyright>
 </div>
   </footer>
         
@@ -332,10 +333,10 @@
            });
        
            ScrollReveal().reveal('.heading1', { delay: 500 , origin:'left' });
-           ScrollReveal().reveal('.heading2', { delay: 500 , origin:'right' });
-           ScrollReveal().reveal('.why, .serviceList', { delay: 500 , origin:'bottom' });
-           ScrollReveal().reveal('.contact-right, .row3', { delay: 400 , origin:'right' });
-           ScrollReveal().reveal('.contact-left, .row1', { delay: 400 , origin:'left' });
+           ScrollReveal().reveal('.heading2', { delay: 600 , origin:'right' });
+           ScrollReveal().reveal('.why', { delay: 600 , origin:'bottom' });
+           ScrollReveal().reveal('.galcontainer1', { delay: 700 , origin:'right' });
+           ScrollReveal().reveal('.why', { delay: 600 , origin:'left', interval : 400 });
            ScrollReveal().reveal('.blog-list', { delay: 600 , origin:'right', interval : 400 });
            ScrollReveal().reveal('.containerCon', { delay: 500 , origin:'top' });
        </script>

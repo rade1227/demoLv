@@ -22,17 +22,17 @@ navToggle.addEventListener('click', () => {
 });
 
 
-// (document).ready(function() {
+(document).ready(function() {
 
-// 	(`[unique-script-id="w-w-dm-id"] .btn-box`).click(function() {
-// 	  $(this).parent().children(".overlay").show();
+	(`[unique-script-id="w-w-dm-id"] .btn-box`).click(function() {
+	  $(this).parent().children(".overlay").show();
   
-// 	});
+	});
   
   
-// 	(`[unique-script-id="w-w-dm-id"] .closegal`).click(function() {
-// 	  $(`[unique-script-id="w-w-dm-id"] .overlay`).hide();
-// 	});
-//   });
+	(`[unique-script-id="w-w-dm-id"] .closegal`).click(function() {
+	  $(`[unique-script-id="w-w-dm-id"] .overlay`).hide();
+	});
+  });
 
   

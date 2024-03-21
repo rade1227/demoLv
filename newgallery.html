@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LV Enterprises and Landscaping Service</title>
+    <link rel="shortcut icon" href="img/LV_favi.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Noto+Serif+JP&family=Oldenburg&family=Playpen+Sans&family=Protest+Riot&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/417c74e92d.js"></script>   
+    
+    
+    <style>
+.gallery {
+  --size: 100px;
+  display: grid;
+  grid-template-columns: repeat(6, var(--size));
+  grid-auto-rows: var(--size);
+  margin-bottom: var(--size);
+  place-items: start center;
+  gap: 10px;
+  
+  &:has(:hover) img:not(:hover),
+  &:has(:focus) img:not(:focus){
+    filter: brightness(0.9) contrast(0.9);
+  }
+
+  & img {
+    object-fit: cover;
+    width: calc(var(200px) * 2);
+    height: calc(var(--size) * 2);
+    clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z");
+    transition: clip-path 0.25s, filter 0.75s;
+    grid-column: auto / span 2;
+    border-radius: 5px;
+
+    &:nth-child(5n - 1) { 
+      grid-column: 2 / span 2 
+    }
+
+    &:hover,
+    &:focus {
+      clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z");
+      z-index: 1;
+      transition: clip-path 0.25s, filter 0.25s;
+    }
+    
+    &:focus {
+      outline: 1px dashed black;
+      outline-offset: -5px;
+    }
+  }
+  @media screen and (max-width: 940px) {
+    display:table;
+    max-width: 50%;
+    margin: 0;
+    --size:120px;
+  }
+}
+
+    </style>  
+
+</head>
+ 
+<body>
+  <div id="wrap">
+    <nav>
+        <div class="logo">
+            <img src="img/LV_favi.png" alt="" height="80">
+        </div>
+        <button type="button" class="btnnavbar" data-action="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item" ><a href="index.html">Home</a></li>
+            
+            <li class="nav-item dropdown">
+                <a href="#" data-action="dropdown-toggle" >About</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="about.html">About Us</a>
+                    <a class="dropdown-item" href="team.html">Our Team</a>
+                    <!-- <a class="dropdown-item" href="mission.html" >Mission</a> -->
+                </div>
+            </li>
+            <li class="nav-item"><a href="service.html">Services</a></li>
+                        <li class="nav-item"><a href="gallery.html" class="active">Gallery</a></li>
+                        <li class="nav-item"><a href="contact.html">Contact</a></li>
+                       <button class="button1" href="tel:+919535439059"> Call Today</button>
+        </ul>
+    </nav>
+  </div>
+    <div class="site_container">
+<header>
+        <h1 class="heading1">
+            Gallery
+        </h1>
+        <!-- <p class="heading2"> From garden maintainance to cleanups <br> and repairs, we take pride in our work. <br> For a free Quote, <span class="callnow" style="text-decoration: underline;">Contact us now</span></p> -->
+        
+        <!-- <img class="bgpic" src="img/bg1.jpeg" alt=""> -->
+</header>
+    </div>
+    
+        <!-- MAIN SECTION STARTS HERE -->
+    <div class="galcontainer1">
+        <article class="gallery">
+            <img src="gallery/g0.jpg" alt="" />
+            <img src="gallery/g1.jpg" alt="" />
+            <img src="gallery/g3.jpg" alt="" />
+            <img src="gallery/g4.jpg" alt="" />
+            <img src="gallery/g5.jpg" alt="" />
+            <img src="gallery/g6.jpg" alt="" />
+            <img src="gallery/g7.jpeg" alt="" />
+            <img src="gallery/g8.jpg" alt="" />
+            <img src="gallery/g9.jpg" alt="" />
+            <img src="gallery/g10.jpg" alt="" />
+          </article>
+    </div>
+    
+
+    <!-- FOOTER      -->
+<footer class="footer-distributed">
+
+  <div class="footer-left" style="background: var(--text-color);">
+
+    <img src="img/LV_favi.png"  class="footimg" alt="" style="background: var(--text-color);" >
+    <h3>LV Enterprises and <br>Landscaping Services</h3>
+
+    <p class="footer-links">
+      <a href="index.html" class="link-1">Home</a>
+      
+      <a href="about.html">About Us</a>
+    
+      <a href="service.html">Services</a>
+    
+      <a href="gallery.html">Gallery</a>
+      
+      <a href="team.html">Our Team</a>
+      
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </div>
+
+  <div class="footer-center" style="background: var(--text-color);">
+
+    <div style="background: var(--text-color);">
+      <i class="fa fa-map-marker" style="background: var(--text-color);"></i>
+      <p>833/1. 5TH Main 5th Cross,<br> M.C. Layout Vijayanagar,<br>
+        Bangalore – 560040, <br>
+    Karnataka</p> <br>
+    </div>
+
+    <div style="background: var(--text-color);">
+      <i class="fa fa-phone"></i>
+      <p><a href="tel:+919535439059">+919535439059</a></p>
+    </div>
+
+    <div style="background: var(--text-color);">
+      <i class="fa fa-envelope"></i>
+      <p> <a href="mailto:lvel.service1@gmail.com" target="_blank"> lvel.service1@gmail.com </a> <br>
+        <a href="mailto:lakshmiv@lvlandscaping.in" target="_blank"> lakshmiv@lvlandscaping.in </a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-right" style="background: var(--text-color);">
+
+    <p class="footer-company-about" style="background: var(--text-color);">
+      <span style="background: var(--text-color);">About the company</span>
+      We are qualified landscape service provider.
+      We take pride in providing you with exceptional quality of work ,customer service
+      and standards in safety. Environmental awareness such as water saving, minimizing
+      pollution and recycling is natural part of our daily activities.
+      Because We Care 
+    </p>
+
+    <div class="footer-icons" style="background: var(--text-color);">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" style="color: #70a5ff;"></i></a>
+        <a href="https://www.instagram.com/" target="_blank">  <i class="fa-brands fa-instagram" style="color: #f900aa;"></i></a> 
+            <a href="https://wa.me/919535439059?text=Hi%20LV%20Enterprises%20and%20Landscaping" target="_blank">  <i class="fa-brands fa-whatsapp" style="color: #44a260;"></i></a>
+      <!-- <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a> -->
+
+    </div>
+
+  </div>
+  <hr>
+  <div class="cpy">
+  <p class="cpy"> &copy; 2024 LV Enterprises and Landscaping Services. All Right Reserved by <a href="https://influencerlabs.in/" target="_blank">Influencer Labs</a></p>
+</div>
+</footer>
+      
+            <script src="app.js"></script>
+           
+
+<script>
+    var elem = document.querySelector('.m-p-g');
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      var gallery = new MaterialPhotoGallery(elem);
+    });
+  </script>
+  </body>
+</html>

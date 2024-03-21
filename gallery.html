@@ -7,13 +7,260 @@
     <link rel="shortcut icon" href="img/LV_favi.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Noto+Serif+JP&family=Oldenburg&family=Playpen+Sans&family=Protest+Riot&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/417c74e92d.js"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Noto+Serif+JP&family=Oldenburg&family=Playpen+Sans&family=Protest+Riot&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/417c74e92d.js"></script>   
+  
+  <style>
+    .newgallery
+    {
+      padding: 10px;
+      margin: 5px;
+      box-sizing: border-box;
+    }
+   
+
+    .galgallery
+    {
+     
+      position: relative;
+    }
+   
+
+    #gallery {
+  display: grid;
+  height: calc(100vh - 20px);
+  grid-template: repeat(6, 1fr)/repeat(6, 1fr);
+  grid-gap: 0.5em;
+}
+@media screen and(max-width: 940px) {
+  #gallery {
+    display: inline-flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
+  #gallery > div {
+    width: 48%;
+    margin: 1%;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 350px) {
+  #gallery > div {
+    width: 90%;
+  }
+
+}
+#gallery > div:nth-child(6n+1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+#gallery > div:nth-child(2) {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+#gallery > div:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+#gallery > div > a {
+  opacity: 0;
+  position: absolute;
+  color: #000;
+  background-color: #000;
+  font: bold 4em "Helvetica";
+  text-shadow: 0 -1px 5px #fff, -1px 0px 5px #fff, 0 1px 5px #fff, 1px 0px 5px #fff;
+  /* padding: 2rem; */
+  mix-blend-mode: difference;
+  width: 100%;
+  height: 100%;
+  transition: all ease 1s;
+}
+#gallery > div > img {
+  width: 100%;
+  min-height: 100%;
+  transition: all ease 1s;
+}
+#gallery > div:hover a {
+  opacity: 1;
+}
+#gallery > div {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#gallery div,
+#gallery a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+[id^=lightbox-] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  opacity: 0;
+  transition: opacity 450ms ease-in-out;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+[id^=lightbox-]:target {
+  opacity: 1;
+  pointer-events: inherit;
+}
+[id^=lightbox-]:target img {
+  filter: blur(0);
+}
+[id^=lightbox-] .content {
+  max-width: 90%;
+  position: relative;
+  color: #fff;
+}
+[id^=lightbox-] .content:hover > a.close {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+[id^=lightbox-] .content:hover > .title {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+[id^=lightbox-] .content:hover > .title::after {
+  opacity: 1;
+}
+[id^=lightbox-] .content > * {
+  transition: all 450ms ease-in-out;
+}
+[id^=lightbox-] .title {
+  display: block;
+  margin: 0;
+  padding: 1em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(50%);
+  font-size: 1.5em;
+  opacity: 0;
+}
+[id^=lightbox-] .title::after {
+  content: " ";
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 350ms ease-in-out 250ms;
+  opacity: 0;
+  transform-origin: bottom;
+  mix-blend-mode: soft-light;
+}
+[id^=lightbox-] img {
+  max-height: 70vh;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  filter: blur(10px);
+
+}
+[id^=lightbox-] a.close {
+  width: 2em;
+  height: 2em;
+  position:absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0, 0);
+  opacity: 0;
+  transform-origin: right top;
+  text-decoration: none;
+  color: #fff;
+}
+[id^=lightbox-] a.close::after {
+  content: "X";
+}
+@media screen and (max-width:940px)
+    {
+      .newgallery
+      {
+        padding: 1px;
+        margin: 0;
+        height:60vh;
+        display: block;
+      } 
+      #gallery {
+         /* display: grid; */
+          height: calc(40vh - 10px);
+        grid-template: repeat(6, 1fr)/repeat(6, 1fr);
+              /* grid-gap: 0.5em; */
+    }
+      #gallery > div :nth-child(5n+1) {
+       grid-column: span 9;
+       grid-row: span 2;
+      }
+      #gallery > div:nth-child(2) {
+      grid-column: span 3;
+      grid-row: span 3;
+    }
+    #gallery > div:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 2;
+    }
+
+      .newgallery >div > img 
+      {
+        height: 100px;
+      }
+      .newgallery img::before{
+        width: 100%;
+
+      }
+      /* .newgallery img::after{
+        width:350px;
+        height: 300px;
+        /* width:100%; */
+        /* margin: 0; */
+    
+      #gallery > div > a
+      {
+
+        display: flex;
+        object-fit:fill;
+        padding: .1em;
+        /* flex-direction: column-reverse; */
+      }
+      .galgallery > div > img
+      {
+        object-fit:fill;
+        height:50px;
+
+      }
+      #gallery > div > img {
+  width: 100%;
+  /* min-height: 50px; */
+  object-fit: cover;
+  /* transition: all ease 1s; */
+  }
+     
+    }
+  </style>
+
+
   </head>
+
+
 <body>
   <div id="wrap">
     <nav>
@@ -41,7 +288,8 @@
             <li class="nav-item"><a href="service.html">Services</a></li>
                         <li class="nav-item"><a href="gallery.html" class="active">Gallery</a></li>
                         <li class="nav-item"><a href="contact.html">Contact</a></li>
-                       <button class="button1" href="tel:+919535439059"> Call Today</button>
+                        <button class="button1"><a href="tel:+919535439059" style="text-decoration: none; background: var(--btncolor); color:white;"> Call Today </a></button>
+
         </ul>
     </nav>
   </div>
@@ -56,157 +304,131 @@
   
 </header>
     </div>
-            <div class="galcontainer"> 
-              <div class="desktop_2">
-                <div class="Container">
-                  <div class="portfolio">
-                    <div class="above">
-                      <div class="project project-first">
-                        <img alt="" class="bigImg image-block" src="gallery/image.jpg">
-                        <div class="overlay">
-                          <div class="overlay-inner">
-                            <button class="closegal">
-                              Close X
-                            </button>
-                            <div class="hdImgs">
-                              <img alt="" class="againImg" src="gallery/image.jpg">
-                            </div>
-                          </div>
-                        </div>
-                        <!-- <div class="btn-box">
-                          <button class="btn">
-                            View
-                          </button>
-                        </div> -->
-                      </div>
-                      <div class="side">
-                        <div class="project">
-                          <img alt="" class="project-image" src="gallery/terrace-2-e.jpg">
-                          <div class="overlay">
-                            <div class="overlay-inner">
-                              <button class="closegal">
-                                Close X
-                              </button>
-                              <div class="hdImgs">
-                                <img alt="" class="againImg" src="gallery/terrace-2-e.jpg">
-                              </div>
-                            </div>
-                          </div>
-                          <!-- <div class="btn-box">
-                            <button class="btn">
-                              View
-                            </button>
-                          </div> -->
-                        </div>
-                        <div class="project">
-                          <img alt="" class="project-image" src="gallery/garden-pond-m.jpg">
-                          <div class="hdImg">
-                            <img alt="" class="againImg" src="gallery/garden-pond-m.jpg">
-                          </div>
-                          <!-- <div class="btn-box">
-                            <button class="btn">
-                              View
-                            </button>
-                          </div> -->
-                        </div>
-                      </div>
-                    </div>
-                    <div class="bottom">
-                      <div class="project">
-                        <img alt="" class="project-image" src="gallery/indoor.jpeg">
-                        <div class="overlay">
-                          <div class="overlay-inner">
-                            <button class="closegal">
-                              Close X
-                            </button>
-                            <div class="hdImgs">
-                              <img alt="" class="againImg" src="gallery/indoor.jpeg">
-                            </div>
-                          </div>
-                        </div>
-                        <!-- <div class="btn-box">
-                          <button class="btn">
-                            View
-                          </button>
-                        </div> -->
-                      </div>
-                      <div class="project">
-                        <img alt="" class="project-image" src="gallery/Small-garden-landscaping-ideas.jpg">
-                        <div class="overlay">
-                          <div class="overlay-inner">
-                            <button class="closegal">
-                              Close X
-                            </button>
-                            <div class="hdImgs">
-                              <img alt="" class="againImg" src="gallery/Small-garden-landscaping-ideas.jpg">
-                            </div>
-                          </div>
-                        </div>
-                        <!-- <div class="btn-box">
-                          <button class="btn">
-                            View
-                          </button>
-                        </div> -->
-                      </div>
-                      <div class="project">
-                        <img alt="" class="project-image" src="gallery/WhatsApp-Image-2019-08-07-at-10.28.49-1-500x520.jpeg">
-                        <div class="overlay">
-                          <div class="overlay-inner">
-                            <button class="closegal">
-                              Close X
-                            </button>
-                            <div class="hdImgs">
-                              <img alt="" class="againImg" src="gallery/WhatsApp-Image-2019-08-07-at-10.28.49-1-500x520.jpeg">
-                            </div>
-                          </div>
-                        </div>
-                        <!-- <div class="btn-box">
-                          <button class="btn">
-                            View
-                          </button>
-                        </div> -->
-                      </div>
-                      <div class="project">
-                        <img alt="" class="project-image last" src="gallery/10-1623250561.jpg">
-                        <div class="overlay">
-                          <div class="overlay-inner">
-                            <button class="closegal">
-                              Close X
-                            </button>
-                            <div class="hdImgs">
-                              <img alt="" class="againImg" src="gallery/10-1623250561.jpg">
-                            </div>
-                          </div>
-                        </div>
-                        <!-- <div class="btn-box">
-                          <button class="btn">
-                            View
-                          </button>
-                        </div> -->
-                      </div>
-                    </div>
-                  </div>
+    <div class="newgallery">
+           
+            
+              <div id="gallery">
+                <div><img src="gallery/g0.jpg"/><a href="#lightbox-1"></a></div>
+                <div><img src="gallery/g1.jpg"/><a href="#lightbox-2"></a></div>
+                <div><img src="gallery/g2.jpg"/><a href="#lightbox-3"></a></div>
+                <div><img src="gallery/g3.jpg"/><a href="#lightbox-4"></a></div>
+                <div><img src="gallery/g4.jpg"/><a href="#lightbox-5"></a></div>
+                <div><img src="gallery/g5.jpg"/><a href="#lightbox-6"></a></div>
+                <div><img src="gallery/g6.jpg"/><a href="#lightbox-7"></a></div>
+                <div><img src="gallery/g7.jpeg"/><a href="#lightbox-8"></a></div>
+                <div><img src="gallery/g8.jpg"/><a href="#lightbox-9"></a></div>
+                <div><img src="gallery/g9.jpg"/><a href="#lightbox-10"></a></div>
+                <div><img src="gallery/g10.jpg"/><a href="#lightbox-11"></a></div>
+                <div><img src="gallery/g11.jpeg"/><a href="#lightbox-12"></a></div>
+                <div><img src="gallery/g12.jpeg"/><a href="#lightbox-13"></a></div>
+                <div><img src="gallery/g13.jpeg"/><a href="#lightbox-14"></a></div>
+                <div><img src="gallery/g14.jpeg"/><a href="#lightbox-15"></a></div>
+                <div><img src="gallery/g15.jpeg"/><a href="#lightbox-16"></a></div>
+                <div><img src="gallery/g16.jpeg"/><a href="#lightbox-17"></a></div>
+                <div><img src="gallery/g17.jpeg"/><a href="#lightbox-18"></a></div>
+              </div>
+              <div class="galgallery" >
+              <div class="lightbox" id="lightbox-1">
+                <div class="content"><img src="gallery/g0.jpg"/>
+                  <a class="close" href="#gallery"></a>
                 </div>
               </div>
-                     <!-- <div class="masonry-item">
-                        <img src="gallery/indoor.jpeg" alt="Image 2">
-                      </div><div class="masonry-item">
-                        <img src="gallery/bg2.jpeg" alt="Image 1">
-                      </div>
-                
-                      <div class="masonry-item">
-                        <img src="gallery/indoor.jpeg" alt="Image 2">
-                      </div>
-                 -->
-                      <!-- Add more masonry items as needed -->
+              <div class="lightbox" id="lightbox-2">
+                <div class="content"><img src="gallery/g1.jpg"/>
+                  <a class="close" href="#gallery"></a>
                 </div>
+              </div>
+              <div class="lightbox" id="lightbox-3">
+                <div class="content"><img src="gallery/g2.jpg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-4">
+                <div class="content"><img src="gallery/g3.jpg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-5">
+                <div class="content"><img src="gallery/g4.jpg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-6">
+                <div class="content"><img src="gallery/g5.jpg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-7">
+                <div class="content"><img src="gallery/g6.jpg"/>
+                <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-8">
+                <div class="content"><img src="gallery/g7.jpeg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-9">
+                <div class="content"><img src="gallery/g8.jpg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-10">
+                <div class="content"><img src="gallery/g9.jpg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-11">
+                <div class="content"><img src="gallery/g10.jpg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-12">
+                <div class="content"><img src="gallery/g11.jpeg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-13">
+                <div class="content"><img src="gallery/g12.jpeg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-14">
+                <div class="content"><img src="gallery/g13.jpeg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-15">
+                <div class="content"><img src="gallery/g14.jpeg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-16">
+                <div class="content"><img src="gallery/g15.jpeg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-17">
+                <div class="content"><img src="gallery/g16.jpeg">
+                 <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+              <div class="lightbox" id="lightbox-18">
+                <div class="content"><img src="gallery/g17.jpeg"/>
+                  <a class="close" href="#gallery"></a>
+                </div>
+              </div>
+
+
+
+            </div>
                   
-        
+          </div>
 <footer class="footer-distributed">
 
   <div class="footer-left" style="background: var(--text-color);">
 
-    <img src="img/LV_favi.png" alt="" style="background: var(--text-color);" width="150">
+    <img src="img/LV_favi.png" class="footimg" alt="" style="background: var(--text-color);" >
     <h3>LV Enterprises and <br>Landscaping Services</h3>
 
     <p class="footer-links">
@@ -271,7 +493,7 @@
   </div>
   <hr>
   <div class="cpy">
-  <p class="cpy"> &copy; 2024 LV Enterprises and Landscaping Services. All Right Reserved by <a href="https://influencerlabs.in/" target="_blank">Influencer Labs</a></p>
+  <p class="cpy"> &copy; 2024 All Right Reserved by <a href="https://influencerlabs.in/" target="_blank">Influencer Labs</a></p>
 </div>
 </footer>
       

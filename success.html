@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,14 +14,27 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Noto+Serif+JP&family=Oldenburg&family=Playpen+Sans&family=Protest+Riot&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/417c74e92d.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <style>
+        @media screen and (max-width:940px) 
+        {
+            .success
+            {
+                max-width: 100%;
+            }
+
+        }
+    </style>
+
 </head>
 
 <body>
     <div id="wrap">
         <nav>
-            <div class="logo">
-                <img src="img/LV_favi.png" alt="" height="80">
-            </div>
+            <img class="logo" src="img/LV_favi.png" alt="" height="80">
+
             <button type="button" class="btnnavbar" data-action="nav-toggle">
                 <span></span>
                 <span></span>
@@ -30,14 +43,14 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="index.html" class="active">Home</a></li>
 
                 <li class="nav-item dropdown">
-                    <a href="#" data-action="dropdown-toggle" class="active">About</a>
+                    <a href="#" data-action="dropdown-toggle">About</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="about.html">About Us</a>
                         <a class="dropdown-item" href="team.html">Our Team</a>
-                        <!-- <a class="dropdown-item" href="mission.html">Mission</a> -->
+                        <!-- <a class="dropdown-item" href="mission.html" >Mission</a> -->
                     </div>
                 </li>
                 <li class="nav-item"><a href="service.html">Services</a></li>
@@ -51,65 +64,33 @@
     <div class="site_container">
         <header>
             <h1 class="heading1">
-                Our Mission and Vision
+                LV Enterprises<br> and Landscaping <br>Services
             </h1>
-            <!-- <p class="heading2"> From garden maintainance to cleanups <br> and repairs, we take pride in our work. <br> For a free Quote, <span class="callnow" style="text-decoration: underline;">Contact us now</span></p> -->
+            <!-- <p class="heading2"> From garden maintainance to cleanups <br> and repairs, we take pride in our work. <br>
+                For a free Quote, <a href="contact.html"
+                    style="text-decoration: underline; color: var(--text-color);">Contact us now</a></p> -->
 
-            <img class="bgpic" src="gallery/proj-banner.jpg" alt="">
+            <!-- <img class="bgpic" src="img/bg1.jpeg" alt=""> -->
     </div>
     </header>
-
-    <!-- CONTENT -->
-
-    <div class="why1">
-        <div class="abtrow">
-            <div class="abtcolumn" style="background-color: #fff;"">
-                <p style="text-align: justify; padding:10px; ">
-                    <ul style="background-color: #fff; list-style-type: circle; font-size:14px; line-height: 2em;" >
-                    <li>To be a responsible, trustworthy, and dependable company capable of developing long-term relationships based on mutual respect.
-                     </li>
-                        <li>To maintain the basic principal that quality is more important than quantity</li>
-                        <li>To profit fairly through our experience, efficiency, diligence, and creativity and to share this profit with employees.</li>
-                        <li>To maintain a safe, positive workplace in which individual employee's talents are encouraged, used, and recognized</li>
-                        <li>To stand behind our products and services to ensure optimum client satisfaction</li>
-                        <li>Employ best production practices and equipment for cost management</li>
-                        <li>Sequence job based on customer and seasonal priorities</li>
-                        <li>Develop cost reduction strategies over time</li>
-                        <li>Identify valuable landscape during each season</li>
-                        <li>Initiate new landscape maintenance ideas through new cultural practice</li>
-                    </ul></p>
-            </div>
-            <div class="abtcolumn">
-                <img src="gallery/mission1.jpeg" alt="Image">
-            </div>
-        </div>
-        <div class="abtrow">
-            <div class="abtcolumn">
-                <img src="gallery/mission2.jpg" alt="Placeholder Image">
-            </div>
-            <div class="abtcolumn">
-                <p style="text-align: justify; padding:20px; ">At LV Enterprise, we understand that landscaping is often
-                    the last detail you need to be worried about. That's why our team is dedicated to providing
-                    top-notch landscaping services, so you can always enjoy the beauty of your outdoor space without the
-                    hassle. <b style="background: #fff;"> We believe that a well-maintained and aesthetically attractive
-                        garden adds personality to your site, while enhancing its property value. </b>We offer a range
-                    of customizable services tailored to your specific needs and preferences. From enhancing the value
-                    of your property to creating a beautiful space for your family, we’ve got you covered. Contact us to
-                    learn more about how we can transform your landscape today!</p>
-            </div>
-
-        </div>
-    </div>
+<div class="success" style="background: none ; text-align: center; padding: 100px 0;">
+    <h1> Thanks for contacting us! We will get back shortly.. </h1>
+    <p style="background: none ;"> <a href="index.html"
+        style="text-decoration: underline;  background: none ;">Return back to home</a></p>
+</div>
 
 
 
 
-    <!-- <section>Footer</section> -->
+
+
+
+     <!-- FOOTER -->
     <footer class="footer-distributed">
 
         <div class="footer-left" style="background: var(--text-color);">
 
-            <img src="img/LV_favi.png" class="footimg" alt="" style="background: var(--text-color);" >
+            <img src="img/LV_favi.png" class="footimg" alt="" style="background: var(--text-color);">
             <h3>LV Enterprises and <br>Landscaping Services</h3>
 
             <p class="footer-links">
@@ -150,13 +131,12 @@
             </div>
 
         </div>
-
         <div class="footer-right" style="background: var(--text-color);">
 
             <p class="footer-company-about" style="background: var(--text-color);">
                 <span style="background: var(--text-color);">About the company</span>
                 We are qualified landscape service provider.
-                We take pride in providing you with exceptional quality of work ,customer service
+                We take pride in providing you with exceptional quality of work, customer service
                 and standards in safety. Environmental awareness such as water saving, minimizing
                 pollution and recycling is natural part of our daily activities.
                 Because We Care
@@ -170,19 +150,18 @@
                 <a href="https://wa.me/919535439059?text=Hi%20LV%20Enterprises%20and%20Landscaping" target="_blank"> <i
                         class="fa-brands fa-whatsapp" style="color: #44a260;"></a></i>
                 <!-- <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-github"></i></a> -->
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a> -->
 
             </div>
 
         </div>
-
+        <hr>
+        <div class="cpy">
+            <copyright class="cpy"> &copy 2024 All Right Reserved by <a href="https://influencerlabs.in/" target="_blank">Influencer Labs</a></copyright>
+        </div>
     </footer>
-
-
-    <script src="app.js"></script>
-
 </body>
 
 </html>
